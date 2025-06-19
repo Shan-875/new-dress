@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleNest - Order Now</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      width: 220px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1eb95a;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    a {
+      color: #25D366;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛍️ The Silent Elephant - Place Your Order</h1>
+
+  <h2>👕 Our Latest T-Shirts</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Red+T-Shirt" alt="Red T-Shirt" />
+      <h3>Red Style Tee</h3>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Black+T-Shirt" alt="Black T-Shirt" />
+      <h3>Black Urban Tee</h3>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=Brown+T-Shirt" alt="Brown T-Shirt" />
+      <h3>Brown Urban Tee</h3>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/200x200.png?text=White+T-Shirt" alt="White T-Shirt" />
+      <h3>White Chines Tee</h3>
+    </div>
+  </div>
+
+  <form id="orderForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Your Mobile Number" required />
+    <input type="text" id="product" placeholder="Product Name (e.g., Red Style Tee)" required />
+    <input type="number" id="quantity" placeholder="Quantity" required />
+    <input type="text" id="address" placeholder="Delivery Address" required />
+    <textarea id="notes" placeholder="Any Notes (Optional)"></textarea>
+
+    <div class="btn-group">
+      <button type="button" class="submit-btn" onclick="handleSubmit()">Submit</button>
+      <button type="button" class="whatsapp-btn" onclick="sendWhatsApp()">Order via WhatsApp</button>
+    </div>
+  </form>
+
+  <footer>
+    &copy; 2025 StyleNest | <a href="owner.html">Go to Owner Page</a>
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      alert("Thank you! Your order is noted. Please click 'Order via WhatsApp' to confirm.");
+    }
+
+    function sendWhatsApp() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const product = document.getElementById("product").value.trim();
+      const quantity = document.getElementById("quantity").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const notes = document.getElementById("notes").value.trim();
+
+      const message = `🛍️ *New Order from StyleNest*%0A%0A👤 *Name:* ${name}%0A📞 *Phone:* ${phone}%0A👕 *Product:* ${product}%0A🔢 *Quantity:* ${quantity}%0A🏠 *Address:* ${address}%0A📝 *Notes:* ${notes || "None"}`;
+      const ownerNumber = "6282877896";
+      const whatsappURL = `https://wa.me/${6282877896}?text=${encodeURIComponent("Introducing The Silent Elephant - where premium meets ...")}`;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
